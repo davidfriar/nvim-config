@@ -10,8 +10,13 @@ return {
       section_separators = { left = '', right = '' },
       disabled_filetypes = {
         statusline = {'NvimTree'}
-      }
-    }
+      },
+    },
+    sections = { 
+      lualine_c = { 
+        { 'filename', path=1 } 
+      },
+    },
   },
   init = function()
     vim.opt.showmode = false
