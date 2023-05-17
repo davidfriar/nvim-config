@@ -9,6 +9,7 @@ local options = {
   showmode = false,
   laststatus = 0,
   ruler = false,
+  cursorline = true,
 }
 
 for k, v in pairs(options) do
