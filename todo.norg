@@ -1,0 +1,10 @@
+- (x) gcc 
+- ( ) gutter notifications
+- ( ) lsp
+-- ( ) signature help
+-- ( ) notification icons
+-- ( ) keybinding
+-- ( ) lua
+--- ( ) allow 'vim' to be global
+-- ( ) null-ls
+- (x) whichkey
