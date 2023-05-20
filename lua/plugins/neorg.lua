@@ -9,34 +9,34 @@ return {
           folds=false,
           icon_preset = 'diamond',
           icons = {
-            todo = {
-              enabled = true,
-              done = {
-                icon = "",
-              },
-              pending = {
-                icon = "",
-              },
-
-              undone = {
-                icon = " ",
-              },
-
-              uncertain = {
-                icon = "",
-              },
-
-              on_hold = {
-                icon = "",
-              },
-
-              cancelled = {
-                icon = "",
-              },
-              urgent = {
-                icon = "!",
-              },
-            },
+            -- todo = {
+            --   enabled = true,
+            --   done = {
+            --     icon = "",
+            --   },
+            --   pending = {
+            --     icon = "",
+            --   },
+            --
+            --   undone = {
+            --     icon = " ",
+            --   },
+            --
+            --   uncertain = {
+            --     icon = "",
+            --   },
+            --
+            --   on_hold = {
+            --     icon = "",
+            --   },
+            --
+            --   cancelled = {
+            --     icon = "",
+            --   },
+            --   urgent = {
+            --     icon = "!",
+            --   },
+            -- },
           },
         },
       },

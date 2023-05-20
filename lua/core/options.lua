@@ -10,6 +10,10 @@ local options = {
   laststatus = 0,
   ruler = false,
   cursorline = true,
+  smartindent = true,
+  updatetime = 1000,
+  undofile = true,
+  swapfile = false,
 }
 
 for k, v in pairs(options) do

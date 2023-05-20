@@ -1,5 +1,4 @@
 return {
-  {'tpope/vim-fugitive'},
   {
     "lukas-reineke/indent-blankline.nvim",
     opts={
@@ -12,6 +11,14 @@ return {
     config = function()
       require('Comment').setup()
     end
-  }
+  },
+  {
+    "ggandor/leap.nvim",
+    dependencies = "tpope/vim-repeat",
+    config = function ()
+      require("leap").add_default_mappings(true)
+    end
+  },
+  { "mbbill/undotree" },
 }
 

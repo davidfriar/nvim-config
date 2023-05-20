@@ -1,6 +1,6 @@
 local opts = { noremap = true, silent = true }
 
-local term_opts = { silent = true }
+--local term_opts = { silent = true }
 
 local keymap = vim.api.nvim_set_keymap
 
@@ -16,7 +16,8 @@ vim.g.maplocalleader = ","
 --   visual_block_mode = "x",
 --   term_mode = "t",
 --   command_mode = "c",
-
+-- one 
+-- two and a bit
 
 -- Leader
 
@@ -25,6 +26,7 @@ keymap("n", "<leader>N", ":set number!<CR>", opts)
 keymap("n", "<leader>T", ":NvimTreeToggle<CR>", opts)
 keymap("n", "<leader>t", ":NvimTreeFocus<CR>", opts)
 keymap("n", "<leader>z", ":ZenMode<CR>", opts)
+keymap("n", "<leader>u", "<cmd>UndotreeToggle<cr>", opts)
 
 -- Normal --
 -- Better window navigation
@@ -75,4 +77,13 @@ keymap("x", "<A-k>", ":move '<-2<CR>gv-gv", opts)
 -- keymap("t", "<C-j>", "<C-\\><C-N><C-w>j", term_opts)
 -- keymap("t", "<C-k>", "<C-\\><C-N><C-w>k", term_opts)
 -- keymap("t", "<C-l>", "<C-\\><C-N><C-w>l", term_opts)
+
+-- Trouble
+
+  keymap("n", "<leader>xx", "<cmd>TroubleToggle<cr>", opts)
+  keymap("n", "<leader>xw", "<cmd>TroubleToggle workspace_diagnostics<cr>", opts)
+  keymap("n", "<leader>xd", "<cmd>TroubleToggle document_diagnostics<cr>", opts)
+  keymap("n", "<leader>xl", "<cmd>TroubleToggle loclist<cr>", opts)
+  keymap("n", "<leader>xq", "<cmd>TroubleToggle quickfix<cr>", opts)
+  keymap("n", "gR", "<cmd>TroubleToggle lsp_references<cr>", opts)
 

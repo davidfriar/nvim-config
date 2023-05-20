@@ -4,7 +4,7 @@ return {
   event = 'VeryLazy',
   opts = { -- See :help lualine.txt
     options = {
-      theme = 'gruvbox',
+      theme = 'gruvbox-baby',
       icons_enabled = true,
       component_separators = { left = '', right = '' },
       section_separators = { left = '', right = '' },
@@ -12,9 +12,9 @@ return {
         statusline = {'NvimTree'}
       },
     },
-    sections = { 
-      lualine_c = { 
-        { 'filename', path=1 } 
+    sections = {
+      lualine_c = {
+        { 'filename', path=1 }
       },
     },
   },

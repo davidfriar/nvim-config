@@ -8,6 +8,7 @@ return {
     "hrsh7th/cmp-path",
     "hrsh7th/cmp-nvim-lsp",
     "saadparwaiz1/cmp_luasnip",
+    "onsails/lspkind.nvim",
   },
   opts = function()
     local cmp = require("cmp")
@@ -41,13 +42,10 @@ return {
         { name = "luasnip" },
       }),
       formatting = {
-        format = function(_, item)
-          --local icons = require("lazyvim.config").icons.kinds
-          --if icons[item.kind] then
-            --item.kind = icons[item.kind] .. item.kind
-          --end
-          return item
-        end,
+        format = require('lspkind').cmp_format {
+          maxwidth = 50,
+          ellipsis_char = "..."
+        },
       },
       window = {
         -- completion = cmp.config.window.bordered(),
