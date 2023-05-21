@@ -142,10 +142,16 @@ return {
           edit = "<CR>",
         },
         lightbulb = {
-          enable = false,
+          enable = true,
+          virtual_text = false,
         },
         symbol_in_winbar = {
           enable = false,
+        },
+        ui = {
+          title = "false",
+          code_action = "",
+          hover = "",
         },
       })
     end,
@@ -155,20 +161,19 @@ return {
       { "nvim-treesitter/nvim-treesitter" },
     },
   },
-  {
-    "kosayoda/nvim-lightbulb",
-    dependencies = "antoinemadec/FixCursorHold.nvim",
-    config = function()
-      require("nvim-lightbulb").setup({
-        autocmd = {
-          enabled = true,
-        },
-        sign = {
-          priority = 1,
-        },
-      })
-    end,
-  },
+  -- {
+  --   "kosayoda/nvim-lightbulb",
+  --   config = function()
+  --     require("nvim-lightbulb").setup({
+  --       autocmd = {
+  --         enabled = true,
+  --       },
+  --       sign = {
+  --         priority = 1,
+  --       },
+  --     })
+  --   end,
+  -- },
   {
     "folke/trouble.nvim",
     dependencies = "nvim-tree/nvim-web-devicons",
