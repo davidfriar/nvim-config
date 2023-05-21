@@ -16,6 +16,9 @@ keymap("n", "<leader>t", ":NvimTreeFocus<CR>", opts)
 keymap("n", "<leader>z", ":ZenMode<CR>", opts)
 keymap("n", "<leader>u", "<cmd>UndotreeToggle<cr>", opts)
 
+-- clear search highlights with enter
+keymap("n", "<cr>", ":nohlsearch<cr>", opts)
+
 -- Normal --
 -- Better window navigation
 keymap("n", "<C-h>", "<C-w>h", opts)
@@ -36,7 +39,6 @@ keymap("n", "<S-h>", ":bprevious<CR>", opts)
 -- Move text up and down
 keymap("n", "<A-k>", ":m .-2<CR>==", opts)
 keymap("n", "<A-j>", ":m .+1<CR>==", opts)
-
 
 -- Insert --
 keymap("i", "<A-j>", "<Esc>:m .+1<CR>==gi", opts)
@@ -68,10 +70,9 @@ keymap("t", "<C-l>", "<C-\\><C-N><C-w>l", term_opts)
 
 -- Trouble
 
-  keymap("n", "<leader>xx", "<cmd>TroubleToggle<cr>", opts)
-  keymap("n", "<leader>xw", "<cmd>TroubleToggle workspace_diagnostics<cr>", opts)
-  keymap("n", "<leader>xd", "<cmd>TroubleToggle document_diagnostics<cr>", opts)
-  keymap("n", "<leader>xl", "<cmd>TroubleToggle loclist<cr>", opts)
-  keymap("n", "<leader>xq", "<cmd>TroubleToggle quickfix<cr>", opts)
-  keymap("n", "gR", "<cmd>TroubleToggle lsp_references<cr>", opts)
-
+keymap("n", "<leader>xx", "<cmd>TroubleToggle<cr>", opts)
+keymap("n", "<leader>xw", "<cmd>TroubleToggle workspace_diagnostics<cr>", opts)
+keymap("n", "<leader>xd", "<cmd>TroubleToggle document_diagnostics<cr>", opts)
+keymap("n", "<leader>xl", "<cmd>TroubleToggle loclist<cr>", opts)
+keymap("n", "<leader>xq", "<cmd>TroubleToggle quickfix<cr>", opts)
+keymap("n", "gR", "<cmd>TroubleToggle lsp_references<cr>", opts)

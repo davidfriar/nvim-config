@@ -42,10 +42,10 @@ return {
         { name = "luasnip" },
       }),
       formatting = {
-        format = require('lspkind').cmp_format {
+        format = require("lspkind").cmp_format({
           maxwidth = 50,
-          ellipsis_char = "..."
-        },
+          ellipsis_char = "...",
+        }),
       },
       window = {
         -- completion = cmp.config.window.bordered(),
@@ -59,4 +59,3 @@ return {
     }
   end,
 }
-

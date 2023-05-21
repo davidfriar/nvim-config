@@ -4,40 +4,10 @@ return {
   opts = {
     load = {
       ["core.defaults"] = {}, -- Loads default behaviour
-      ['core.concealer'] = {
+      ["core.concealer"] = {
         config = {
-          folds=false,
-          icon_preset = 'diamond',
-          icons = {
-            -- todo = {
-            --   enabled = true,
-            --   done = {
-            --     icon = "",
-            --   },
-            --   pending = {
-            --     icon = "",
-            --   },
-            --
-            --   undone = {
-            --     icon = " ",
-            --   },
-            --
-            --   uncertain = {
-            --     icon = "",
-            --   },
-            --
-            --   on_hold = {
-            --     icon = "",
-            --   },
-            --
-            --   cancelled = {
-            --     icon = "",
-            --   },
-            --   urgent = {
-            --     icon = "!",
-            --   },
-            -- },
-          },
+          folds = false,
+          icon_preset = "diamond",
         },
       },
       ["core.dirman"] = { -- Manages Neorg workspaces
@@ -50,7 +20,7 @@ return {
       ["core.completion"] = {
         config = {
           engine = "nvim-cmp",
-        }
+        },
       },
     },
   },

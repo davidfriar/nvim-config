@@ -5,8 +5,8 @@ return {
     vim.o.timeoutlen = 300
     require("which-key").setup({
       layout = {
-        width = { max = 100}
-      }
+        width = { max = 100 },
+      },
     })
   end,
 }

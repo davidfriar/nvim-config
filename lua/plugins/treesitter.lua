@@ -1,9 +1,9 @@
 return {
-  'nvim-treesitter/nvim-treesitter',
+  "nvim-treesitter/nvim-treesitter",
   dependencies = {
-    'nvim-treesitter/nvim-treesitter-textobjects'
+    "nvim-treesitter/nvim-treesitter-textobjects",
   },
-  opts={
+  opts = {
     highlight = {
       enable = true,
     },
@@ -13,25 +13,24 @@ return {
         enable = true,
         lookahead = true,
         keymaps = {
-          ['af'] = '@function.outer',
-          ['if'] = '@function.inner',
-          ['ac'] = '@class.outer',
-          ['ic'] = '@class.inner',
-        }
+          ["af"] = "@function.outer",
+          ["if"] = "@function.inner",
+          ["ac"] = "@class.outer",
+          ["ic"] = "@class.inner",
+        },
       },
     },
     ensure_installed = {
-      'javascript',
-      'typescript',
-      'tsx',
-      'lua',
-      'css',
-      'json',
-      'haskell'
+      "javascript",
+      "typescript",
+      "tsx",
+      "lua",
+      "css",
+      "json",
+      "haskell",
     },
   },
   config = function(_, opts)
-    require('nvim-treesitter.configs').setup(opts)
-  end
-
+    require("nvim-treesitter.configs").setup(opts)
+  end,
 }

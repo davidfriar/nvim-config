@@ -1,14 +1,12 @@
-
-
 return {
   "nvim-telescope/telescope.nvim",
   branch = "0.1.x",
   dependencies = {
-    {"nvim-lua/plenary.nvim"},
-    {"nvim-telescope/telescope-fzf-native.nvim", build = "make"},
+    { "nvim-lua/plenary.nvim" },
+    { "nvim-telescope/telescope-fzf-native.nvim", build = "make" },
   },
-  cmd = {"Telescope"},
-  init = function ()
+  cmd = { "Telescope" },
+  init = function()
     local keymap = vim.keymap.set
     -- See :help telescope.builtin
     keymap("n", "<leader>?", "<cmd>Telescope oldfiles<cr>")
@@ -21,7 +19,7 @@ return {
   config = function()
     local telescope = require("telescope")
     telescope.load_extension("fzf")
-    telescope.setup {
+    telescope.setup({
       defaults = {
         borderchars = {
           prompt = { "─", " ", " ", " ", "─", "─", " ", " " },
@@ -29,7 +27,6 @@ return {
           preview = { " " },
         },
       },
-    }
-  end
+    })
+  end,
 }
-
