@@ -14,6 +14,7 @@ local options = {
   updatetime = 1000,
   undofile = true,
   swapfile = false,
+  clipboard = "unnamedplus",
 }
 
 for k, v in pairs(options) do
