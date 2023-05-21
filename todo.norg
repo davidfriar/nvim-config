@@ -1,11 +1,12 @@
 - (x) gcc 
-- ( ) gutter notifications
+- (x) gutter notifications
 - (-) lsp
 -- (x) signature help
--- ( ) notification icons
+-- (x) notification icons
 -- (x) keybinding
 -- (x) lua
 --- (x) allow 'vim' to be global
 -- ( ) haskell
--- ( ) null-ls
+-- (x) null-ls
 - (x) whichkey
+- (x) surround
