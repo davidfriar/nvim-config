@@ -15,6 +15,7 @@ local options = {
   undofile = true,
   swapfile = false,
   clipboard = "unnamedplus",
+  wrap = false,
 }
 
 for k, v in pairs(options) do
