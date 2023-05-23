@@ -1,78 +1,102 @@
-local opts = { noremap = true, silent = true }
-local term_opts = { silent = true }
-local keymap = vim.api.nvim_set_keymap
-
 --Remap space as leader key
-keymap("", "<Space>", "<Nop>", opts)
+vim.api.nvim_set_keymap("", "<Space>", "<Nop>", { noremap = true, silent = true })
 vim.g.mapleader = " "
 vim.g.maplocalleader = ","
 
--- Leader
-
-keymap("n", "<leader>n", ":set relativenumber!<CR>", opts)
-keymap("n", "<leader>N", ":set number!<CR>", opts)
-keymap("n", "<leader>T", ":NvimTreeToggle<CR>", opts)
-keymap("n", "<leader>t", ":NvimTreeFocus<CR>", opts)
-keymap("n", "<leader>z", ":ZenMode<CR>", opts)
-keymap("n", "<leader>u", "<cmd>UndotreeToggle<cr>", opts)
-
--- clear search highlights with enter
-keymap("n", "<cr>", ":nohlsearch<cr>", opts)
-
--- Normal --
--- Better window navigation
-keymap("n", "<C-h>", "<C-w>h", opts)
-keymap("n", "<C-j>", "<C-w>j", opts)
-keymap("n", "<C-k>", "<C-w>k", opts)
-keymap("n", "<C-l>", "<C-w>l", opts)
-
--- Resize with arrows
-keymap("n", "<C-Up>", ":resize +2<CR>", opts)
-keymap("n", "<C-Down>", ":resize -2<CR>", opts)
-keymap("n", "<C-Left>", ":vertical resize -2<CR>", opts)
-keymap("n", "<C-Right>", ":vertical resize +2<CR>", opts)
-
--- Navigate buffers
-keymap("n", "<S-l>", ":bnext<CR>", opts)
-keymap("n", "<S-h>", ":bprevious<CR>", opts)
-
--- Move text up and down
-keymap("n", "<A-k>", ":m .-2<CR>==", opts)
-keymap("n", "<A-j>", ":m .+1<CR>==", opts)
-
--- Insert --
-keymap("i", "<A-j>", "<Esc>:m .+1<CR>==gi", opts)
-keymap("i", "<A-k>", "<Esc>:m .-2<CR>==gi", opts)
-
--- Visual --
--- Stay in indent mode
-keymap("v", "<", "<gv", opts)
-keymap("v", ">", ">gv", opts)
-
--- Move text up and down
-keymap("v", "<A-j>", ":m .+1<CR>==", opts)
-keymap("v", "<A-k>", ":m .-2<CR>==", opts)
-keymap("v", "p", '"_dP', opts)
-
--- Visual Block --
--- Move text up and down
-keymap("x", "J", ":move '>+1<CR>gv-gv", opts)
-keymap("x", "K", ":move '<-2<CR>gv-gv", opts)
-keymap("x", "<A-j>", ":move '>+1<CR>gv-gv", opts)
-keymap("x", "<A-k>", ":move '<-2<CR>gv-gv", opts)
-
--- Terminal --
--- Better terminal navigation
-keymap("t", "<C-h>", "<C-\\><C-N><C-w>h", term_opts)
-keymap("t", "<C-j>", "<C-\\><C-N><C-w>j", term_opts)
-keymap("t", "<C-k>", "<C-\\><C-N><C-w>k", term_opts)
-keymap("t", "<C-l>", "<C-\\><C-N><C-w>l", term_opts)
-
--- Trouble
-
-keymap("n", "<leader>xx", "<cmd>TroubleToggle<cr>", opts)
-keymap("n", "<leader>xw", "<cmd>TroubleToggle workspace_diagnostics<cr>", opts)
-keymap("n", "<leader>xd", "<cmd>TroubleToggle document_diagnostics<cr>", opts)
-keymap("n", "<leader>xl", "<cmd>TroubleToggle loclist<cr>", opts)
-keymap("n", "<leader>xq", "<cmd>TroubleToggle quickfix<cr>", opts)
-keymap("n", "gR", "<cmd>TroubleToggle lsp_references<cr>", opts)
+return {
+  global = {
+    n = {
+      -- Leader
+      ["<leader>f"] = { name = "Files" },
+      ["<leader>ff"] = { "<cmd>Telescope find_files<CR>", "Find Files" },
+      ["<leader>fr"] = { "<cmd>Telescope oldfiles<CR>", "Find Recent Files" },
+      ["<leader>b"] = { name = "Buffer" },
+      ["<leader>bb"] = { "<cmd>Telescope buffers<CR>", "Buffer List" },
+      ["<leader>bf"] = { "<cmd>Telescope current_buffer_fuzzy_find<CR>", "Fuzzy Find" },
+      ["<leader>G"] = { "<cmd>Telescope live_grep<CR>", "Grep" },
+      ["<leader>z"] = { ":ZenMode<CR>", "Zen Mode" },
+      ["<leader>t"] = { ":NvimTreeFocus<CR>", "Tree" },
+      ["<leader>T"] = { ":NvimTreeClose<CR>", "Close Tree" },
+      ["<leader>n"] = { ":set relativenumber!<CR>", "Relative Line Number" },
+      ["<leader>N"] = { ":set number!<CR>", "Line Number" },
+      ["<leader>u"] = { "<cmd>UndotreeToggle<CR>", "Undo Tree" },
+      ["<leader>k"] = { "<cmd>Legendary<CR>", "Keybindings etc..." },
+      ["<cr>"] = { ":nohlsearch<cr>", "Clear Search Highlight" },
+      -- Better window navigation
+      ["<C-h>"] = { "<C-w>h", "Move to Window on Left" },
+      ["<C-j>"] = { "<C-w>j", "Move to Window Below" },
+      ["<C-k>"] = { "<C-w>k", "Move to Window Above" },
+      ["<C-l>"] = { "<C-w>l", "Move to Window on Right" },
+      -- Resize with arrows
+      ["<C-Up>"] = { ":resize +2<CR>", "Increase Window Height" },
+      ["<C-Down>"] = { ":resize -2<CR>", "Decrease Window Height" },
+      ["<C-Left>"] = { ":vertical resize -2<CR>", "Decrease Window Width" },
+      ["<C-Right>"] = { ":vertical resize +2<CR>", "Increase Window Width" },
+      -- Navigate buffers
+      ["<S-l>"] = { ":bnext<CR>", "Next Buffer" },
+      ["<S-h>"] = { ":bprevious<CR>", "Previous Buffer" },
+      -- Move text up and down
+      ["<A-k>"] = { ":m .-2<CR>==", "Move Line Up" },
+      ["<A-j>"] = { ":m .+1<CR>==", "Move Line Down" },
+    },
+    i = {
+      -- Move text up and down
+      ["<A-j>"] = { "<Esc>:m .+1<CR>==gi", "Move Line Down" },
+      ["<A-k>"] = { "<Esc>:m .-2<CR>==gi", "Move Line Up" },
+    },
+    v = {
+      -- Stay in indent mode
+      ["<"] = { "<gv", "Decrease Indent" },
+      [">"] = { ">gv", "Increase Indent" },
+      -- Move text up and down
+      ["<A-j>"] = { ":m .+1<CR>==", "Move Text Down" },
+      ["<A-k>"] = { ":m .-2<CR>==", "Move Text Up" },
+      ["p"] = { '"_dP', "" },
+    },
+    x = {
+      -- Move text up and down
+      ["J"] = { ":move '>+1<CR>gv-gv", "Move Text Down" },
+      ["K"] = { ":move '<-2<CR>gv-gv", "Move Text Up" },
+      ["<A-j>"] = { ":move '>+1<CR>gv-gv", "Move Text Down" },
+      ["<A-k>"] = { ":move '<-2<CR>gv-gv", "Move Text Up" },
+    },
+    t = {
+      -- Better terminal navigation
+      ["<C-h>"] = { "<C-\\><C-N><C-w>h", "Move to Window on Left" },
+      ["<C-j>"] = { "<C-\\><C-N><C-w>j", "Move to Window Below" },
+      ["<C-k>"] = { "<C-\\><C-N><C-w>k", "Move to Window Above" },
+      ["<C-l>"] = { "<C-\\><C-N><C-w>l", "Move to Window on Right" },
+    },
+  },
+  lsp = {
+    n = {
+      ["gf"] = { "<cmd>Lspsaga lsp_finder<CR>", "LSP Finder" }, -- show definition, references
+      ["gd"] = { "<cmd>Lspsaga peek_definition<CR>", "Go to Definition" }, -- see definition and make edits in window
+      ["gi"] = { "<cmd>lua vim.lsp.buf.implementation()<CR>", "Go to Implementation" }, -- go to implementation
+      ["<leader>ca"] = { "<cmd>Lspsaga code_action<CR>", "Show Code Actions" }, -- see available code actions
+      ["<leader>r"] = { name = "Refactor" },
+      ["<leader>rn"] = { "<cmd>Lspsaga rename<CR>", "Rename" }, -- smart rename
+      ["<leader>D"] = { "<cmd>Lspsaga show_line_diagnostics<CR>", "Diagnostics for Line" }, -- show  diagnostics for line
+      ["<leader>d"] = { "<cmd>Lspsaga show_cursor_diagnostics<CR>", "Diagnostics for Cursor" }, -- show diagnostics for cursor
+      ["[d"] = { "<cmd>Lspsaga diagnostic_jump_prev<CR>", "Previous Diagnostic" }, -- jump to previous diagnostic in buffer
+      ["]d"] = { "<cmd>Lspsaga diagnostic_jump_next<CR>", "Next Diagnostic" }, -- jump to next diagnostic in buffer
+      ["K"] = { "<cmd>Lspsaga hover_doc<CR>", "Hover" }, -- show documentation for what is under cursor
+      ["<leader>o"] = { "<cmd>Lspsaga outline<CR>", "Toggle Outline" }, -- see outline on right hand side
+      -- Trouble
+      ["<leader>x"] = { name = "Trouble" },
+      ["<leader>xx"] = { "<cmd>TroubleToggle<cr>", "Toggle Trouble" },
+      ["<leader>xw"] = { "<cmd>TroubleToggle workspace_diagnostics<cr>", "Trouble Workspace" },
+      ["<leader>xd"] = { "<cmd>TroubleToggle document_diagnostics<cr>", "Trouble Document" },
+      ["<leader>xl"] = { "<cmd>TroubleToggle loclist<cr>", "Trouble Loclist" },
+      ["<leader>xq"] = { "<cmd>TroubleToggle quickfix<cr>", "" },
+      ["gR"] = { "<cmd>TroubleToggle lsp_references<cr>", "" },
+    },
+  },
+  tsserver = {
+    n = {
+      ["<leader>rf"] = { ":TypescriptRenameFile<CR>", "Rename File" }, -- rename file and update imports
+      ["<leader>ri"] = { ":TypescriptOrganizeImports<CR>", "Organise Imports" }, -- organize imports (not in youtube nvim video)
+      ["<leader>ru"] = { ":TypescriptRemoveUnused<CR>", "Remove Unused variables" }, -- remove unused variables (not in youtube nvim video)
+    },
+  },
+}

@@ -1,15 +1,18 @@
 - (x) gcc 
 - (x) gutter notifications
-- (-) lsp
+- (x) lsp
 -- (x) signature help
 -- (x) notification icons
 -- (x) keybinding
 -- (x) lua
 --- (x) allow 'vim' to be global
--- ( ) haskell
 -- (x) null-ls
 - (x) whichkey
 - (x) surround
 - (x) iskeyword
 - (x) autopairs
-- ( ) change search highligh color
+- (_) change search highligh color
+- ( ) detect eslint config and ignore if not present
+- ( ) spelling
+- ( ) smarter keymap and whichkey config
+
