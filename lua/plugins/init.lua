@@ -19,6 +19,13 @@ return {
       require("leap").add_default_mappings(true)
     end,
   },
+  {
+    "ggandor/flit.nvim",
+    dependencies = "ggandor/leap.nvim",
+    config = function()
+      require("flit").setup({})
+    end,
+  },
   { "mbbill/undotree" },
   {
     "kylechui/nvim-surround",
