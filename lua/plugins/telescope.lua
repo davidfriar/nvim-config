@@ -10,13 +10,13 @@ return {
     local telescope = require("telescope")
     telescope.load_extension("fzf")
     telescope.setup({
-      defaults = {
-        borderchars = {
-          prompt = { "─", " ", " ", " ", "─", "─", " ", " " },
-          results = { " " },
-          preview = { " " },
-        },
-      },
+      -- defaults = {
+      --   borderchars = {
+      --     prompt = { "─", " ", " ", " ", "─", "─", " ", " " },
+      --     results = { " " },
+      --     preview = { " " },
+      --   },
+      -- },
     })
   end,
 }
