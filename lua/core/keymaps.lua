@@ -10,17 +10,19 @@ return {
       ["<leader>f"] = { name = "Files" },
       ["<leader>ff"] = { "<cmd>Telescope find_files<CR>", "Find Files" },
       ["<leader>fr"] = { "<cmd>Telescope oldfiles<CR>", "Find Recent Files" },
+      ["<leader>fg"] = { "<cmd>Telescope live_grep<CR>", "Grep" },
+
       ["<leader>b"] = { name = "Buffer" },
       ["<leader>bb"] = { "<cmd>Telescope buffers<CR>", "Buffer List" },
       ["<leader>bf"] = { "<cmd>Telescope current_buffer_fuzzy_find<CR>", "Fuzzy Find" },
-      ["<leader>G"] = { "<cmd>Telescope live_grep<CR>", "Grep" },
+
       ["<leader>z"] = { ":ZenMode<CR>", "Zen Mode" },
       ["<leader>t"] = { ":NvimTreeFocus<CR>", "Tree" },
       ["<leader>T"] = { ":NvimTreeClose<CR>", "Close Tree" },
-      ["<leader>n"] = { ":set relativenumber!<CR>", "Relative Line Number" },
-      ["<leader>N"] = { ":set number!<CR>", "Line Number" },
+      ["<leader>n"] = { ":CycleNumber<CR>", "Line Number Style" },
       ["<leader>u"] = { "<cmd>UndotreeToggle<CR>", "Undo Tree" },
       ["<leader>k"] = { "<cmd>Legendary<CR>", "Keybindings etc..." },
+
       ["<cr>"] = { ":nohlsearch<cr>", "Clear Search Highlight" },
       -- Better window navigation
       ["<C-h>"] = { "<C-w>h", "Move to Window on Left" },
@@ -73,23 +75,20 @@ return {
       ["gf"] = { "<cmd>Lspsaga lsp_finder<CR>", "LSP Finder" }, -- show definition, references
       ["gd"] = { "<cmd>Lspsaga peek_definition<CR>", "Go to Definition" }, -- see definition and make edits in window
       ["gi"] = { "<cmd>lua vim.lsp.buf.implementation()<CR>", "Go to Implementation" }, -- go to implementation
-      ["<leader>ca"] = { "<cmd>Lspsaga code_action<CR>", "Show Code Actions" }, -- see available code actions
+      ["gr"] = { "<cmd>TroubleToggle lsp_references<cr>", "" },
+      ["<leader>a"] = { "<cmd>Lspsaga code_action<CR>", "Code Actions" }, -- see available code actions
       ["<leader>r"] = { name = "Refactor" },
       ["<leader>rn"] = { "<cmd>Lspsaga rename<CR>", "Rename" }, -- smart rename
-      ["<leader>D"] = { "<cmd>Lspsaga show_line_diagnostics<CR>", "Diagnostics for Line" }, -- show  diagnostics for line
-      ["<leader>d"] = { "<cmd>Lspsaga show_cursor_diagnostics<CR>", "Diagnostics for Cursor" }, -- show diagnostics for cursor
-      ["[d"] = { "<cmd>Lspsaga diagnostic_jump_prev<CR>", "Previous Diagnostic" }, -- jump to previous diagnostic in buffer
-      ["]d"] = { "<cmd>Lspsaga diagnostic_jump_next<CR>", "Next Diagnostic" }, -- jump to next diagnostic in buffer
       ["K"] = { "<cmd>Lspsaga hover_doc<CR>", "Hover" }, -- show documentation for what is under cursor
       ["<leader>o"] = { "<cmd>Lspsaga outline<CR>", "Toggle Outline" }, -- see outline on right hand side
-      -- Trouble
-      ["<leader>x"] = { name = "Trouble" },
-      ["<leader>xx"] = { "<cmd>TroubleToggle<cr>", "Toggle Trouble" },
-      ["<leader>xw"] = { "<cmd>TroubleToggle workspace_diagnostics<cr>", "Trouble Workspace" },
-      ["<leader>xd"] = { "<cmd>TroubleToggle document_diagnostics<cr>", "Trouble Document" },
-      ["<leader>xl"] = { "<cmd>TroubleToggle loclist<cr>", "Trouble Loclist" },
-      ["<leader>xq"] = { "<cmd>TroubleToggle quickfix<cr>", "" },
-      ["gR"] = { "<cmd>TroubleToggle lsp_references<cr>", "" },
+
+      ["<leader>d"] = { name = "Diagnostics" },
+      ["<leader>dw"] = { "<cmd>TroubleToggle workspace_diagnostics<cr>", "Diagnostics for Workspace" },
+      ["<leader>db"] = { "<cmd>TroubleToggle document_diagnostics<cr>", "Diagnostics for Buffer" },
+      ["<leader>dc"] = { "<cmd>Lspsaga show_cursor_diagnostics<CR>", "Diagnostics for Cursor" }, -- show diagnostics for cursor
+      ["<leader>dl"] = { "<cmd>Lspsaga show_line_diagnostics<CR>", "Diagnostics for Line" }, -- show  diagnostics for line
+      ["[d"] = { "<cmd>Lspsaga diagnostic_jump_prev<CR>", "Previous Diagnostic" }, -- jump to previous diagnostic in buffer
+      ["]d"] = { "<cmd>Lspsaga diagnostic_jump_next<CR>", "Next Diagnostic" }, -- jump to next diagnostic in buffer
     },
   },
   tsserver = {

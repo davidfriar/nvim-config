@@ -7,27 +7,11 @@ return {
   },
   config = function()
     require("legendary").setup({
-      commands = {
-        {
-          ":SayHello",
-          function()
-            print("hello world!")
-          end,
-          description = "Say hello as a command",
-        },
-      },
-      funcs = {
-        {
-          description = "Funky function",
-          function()
-            print("this is funky")
-          end,
-        },
-      },
+      commands = require("core.commands"),
       extensions = {
         nvim_tree = true,
       },
-      select_prompt = "Keybindings, Commands and Functions",
+      select_prompt = "Keybindings and Commands",
       which_key = {
         auto_register = true,
         do_binding = false,
