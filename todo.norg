@@ -15,4 +15,5 @@
 - ( ) detect eslint config and ignore if not present
 - ( ) spelling
 - ( ) smarter keymap and whichkey config
-
+- ( ) emmet
+- ( ) targets
