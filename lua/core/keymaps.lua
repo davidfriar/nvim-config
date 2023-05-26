@@ -11,6 +11,7 @@ return {
       ["<leader>ff"] = { "<cmd>Telescope find_files<CR>", "Find Files" },
       ["<leader>fr"] = { "<cmd>Telescope oldfiles<CR>", "Find Recent Files" },
       ["<leader>fg"] = { "<cmd>Telescope live_grep<CR>", "Grep" },
+      ["<leader>fb"] = { "<cmd>BrowseFiles<CR>", "File Browser" },
 
       ["<leader>b"] = { name = "Buffer" },
       ["<leader>bb"] = { "<cmd>Telescope buffers<CR>", "Buffer List" },
