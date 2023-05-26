@@ -20,7 +20,14 @@ return {
       theme.button("r", "  Recent files", ":Telescope oldfiles <CR>"),
       theme.button("q", "  Quit NVIM", ":qa<CR>"),
     }
+
+    for _, button in ipairs(theme.section.buttons.val) do
+      button.opts.hl = "Identifier"
+      button.opts.hl_shortcut = "Type"
+    end
+
     theme.section.header.val = header
+    theme.section.header.opts.hl = "String"
     require("alpha").setup(theme.config)
   end,
 }
