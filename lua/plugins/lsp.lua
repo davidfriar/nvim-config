@@ -20,6 +20,7 @@ return {
     },
     config = function()
       local capabilities = require("cmp_nvim_lsp").default_capabilities()
+      capabilities.textDocument.completion.completionItem.snippetSupport = true
       local signs = {
         { name = "DiagnosticSignError", text = "" },
         { name = "DiagnosticSignWarn", text = "" },
@@ -80,6 +81,32 @@ return {
             format = { enable = true },
           },
         },
+        lspconfig.emmet_ls.setup({
+          -- on_attach = on_attach,
+          capabilities = capabilities,
+          filetypes = {
+            "css",
+            "eruby",
+            "html",
+            "javascript",
+            "javascriptreact",
+            "less",
+            "sass",
+            "scss",
+            "svelte",
+            "pug",
+            "typescriptreact",
+            "vue",
+          },
+          init_options = {
+            html = {
+              options = {
+                -- For possible options, see: https://github.com/emmetio/emmet/blob/master/src/config.ts#L79-L267
+                -- ["bem.enabled"] = true,
+              },
+            },
+          },
+        }),
       })
       local null_ls = require("null-ls")
       local augroup = vim.api.nvim_create_augroup("LspFormatting", {})
@@ -115,7 +142,7 @@ return {
   {
     "williamboman/mason-lspconfig.nvim",
     opts = {
-      ensure_installed = { "tsserver", "html", "cssls", "lua_ls", "jsonls" },
+      ensure_installed = { "tsserver", "html", "cssls", "lua_ls", "jsonls", "emmet_ls" },
     },
   },
   {
