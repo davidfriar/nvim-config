@@ -2,6 +2,7 @@ return {
   "nvim-treesitter/nvim-treesitter",
   dependencies = {
     "nvim-treesitter/nvim-treesitter-textobjects",
+    "RRethy/nvim-treesitter-textsubjects",
   },
   opts = {
     highlight = {
@@ -18,6 +19,15 @@ return {
           ["ac"] = "@class.outer",
           ["ic"] = "@class.inner",
         },
+      },
+    },
+    textsubjects = {
+      enable = true,
+      prev_selection = ",", -- (Optional) keymap to select the previous selection
+      keymaps = {
+        ["."] = "textsubjects-smart",
+        [";"] = "textsubjects-container-outer",
+        ["i;"] = "textsubjects-container-inner",
       },
     },
     ensure_installed = {
