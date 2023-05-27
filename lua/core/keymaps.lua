@@ -76,7 +76,7 @@ return {
       ["gf"] = { "<cmd>Lspsaga lsp_finder<CR>", "LSP Finder" }, -- show definition, references
       ["gd"] = { "<cmd>Lspsaga peek_definition<CR>", "Go to Definition" }, -- see definition and make edits in window
       ["gi"] = { "<cmd>lua vim.lsp.buf.implementation()<CR>", "Go to Implementation" }, -- go to implementation
-      ["gr"] = { "<cmd>TroubleToggle lsp_references<cr>", "" },
+      ["gr"] = { "<cmd>TroubleToggle lsp_references<cr>", "Show References" },
       ["<leader>a"] = { "<cmd>Lspsaga code_action<CR>", "Code Actions" }, -- see available code actions
       ["<leader>r"] = { name = "Refactor" },
       ["<leader>rn"] = { "<cmd>Lspsaga rename<CR>", "Rename" }, -- smart rename
