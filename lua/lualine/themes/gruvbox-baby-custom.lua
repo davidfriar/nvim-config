@@ -27,9 +27,9 @@ local M = {
     c = { bg = c.background, fg = c.milk },
   },
   inactive = {
-    a = { bg = c.dark_gray, fg = c.gray, gui = "bold" },
-    b = { bg = c.medium_gray, fg = c.gray },
-    c = { bg = c.dark_gray, fg = c.gray },
+    a = { bg = c.medium_gray, fg = c.milk },
+    b = { bg = c.background, fg = c.milk },
+    c = { bg = c.background, fg = c.milk },
   },
 }
 
