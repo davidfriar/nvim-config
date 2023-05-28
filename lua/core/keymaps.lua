@@ -25,6 +25,7 @@ return {
       ["<leader>k"] = { "<cmd>Legendary<CR>", "Keybindings etc..." },
 
       ["<cr>"] = { ":nohlsearch<cr>", "Clear Search Highlight" },
+
       -- Better window navigation
       ["<C-h>"] = { "<C-w>h", "Move to Window on Left" },
       ["<C-j>"] = { "<C-w>j", "Move to Window Below" },
@@ -69,6 +70,12 @@ return {
       ["<C-j>"] = { "<C-\\><C-N><C-w>j", "Move to Window Below" },
       ["<C-k>"] = { "<C-\\><C-N><C-w>k", "Move to Window Above" },
       ["<C-l>"] = { "<C-\\><C-N><C-w>l", "Move to Window on Right" },
+    },
+    o = {
+      [";"] = { name = "Outer Container" },
+      ["."] = { name = "Smart Container" },
+      [","] = { name = "Previous Container" },
+      ["i;"] = { name = "Inner Container" },
     },
   },
   lsp = {
