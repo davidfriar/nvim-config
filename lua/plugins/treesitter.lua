@@ -61,6 +61,7 @@ return {
       "markdown",
       "markdown_inline",
       "query",
+      "html",
     },
   },
   config = function(_, opts)
