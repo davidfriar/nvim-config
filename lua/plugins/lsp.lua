@@ -12,11 +12,18 @@ end
 
 return {
   {
+    "folke/neodev.nvim",
+    config = function()
+      require("neodev").setup({})
+    end,
+  },
+  {
     "neovim/nvim-lspconfig",
     dependencies = {
       "jose-elias-alvarez/typescript.nvim",
       "b0o/schemastore.nvim",
       "jose-elias-alvarez/null-ls.nvim",
+      "folke/neodev.nvim",
     },
     config = function()
       local capabilities = require("cmp_nvim_lsp").default_capabilities()
@@ -37,25 +44,13 @@ return {
       lspconfig.lua_ls.setup({
         capabilities = capabilities,
         on_attach = on_attach,
-        settings = {
-          Lua = {
-            runtime = {
-              version = "LuaJIT",
-            },
-            diagnostics = {
-              globals = { "vim" },
-            },
-            workspace = {
-              library = {
-                [vim.fn.expand("$VIMRUNTIME/lua")] = true,
-                [vim.fn.stdpath("config") .. "/lua"] = true,
-              },
-            },
-            telemetry = {
-              enable = false,
-            },
-          },
-        },
+        -- settings = {
+        --   Lua = {
+        --     completion = {
+        --       callSnippet = "Replace",
+        --     },
+        --   },
+        -- },
       })
       lspconfig.html.setup({
         capabilities = capabilities,
