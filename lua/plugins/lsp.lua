@@ -46,6 +46,9 @@ return {
         on_attach = on_attach,
         settings = {
           Lua = {
+            workspace = {
+              checkThirdParty = false,
+            },
             diagnostics = {
               -- Get the language server to recognize the `vim` global
               globals = { "vim" },
