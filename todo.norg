@@ -14,7 +14,7 @@
 - (_) change search highligh color
 - ( ) detect eslint config and ignore if not present
 - ( ) spelling
-- ( ) smarter keymap and whichkey config
+- (_) smarter keymap and whichkey config
 - (x) emmet
 - (_) targets
 - ( ) map telescope resume
