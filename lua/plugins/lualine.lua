@@ -30,7 +30,8 @@ return {
         lualine_b = {},
         lualine_c = {},
         lualine_x = {},
-        lualine_y = { "location" },
+        -- lualine_y = { "location" },
+        lualine_y = {},
         lualine_z = {},
       },
     })
