@@ -15,5 +15,14 @@
 - ( ) detect eslint config and ignore if not present
 - ( ) spelling
 - ( ) smarter keymap and whichkey config
-- ( ) emmet
-- ( ) targets
+- (x) emmet
+- (_) targets
+- ( ) map telescope resume
+- ( ) telescope help_tags
+- ( ) map neorg toggle concealer
+- (x) vim.api not in completions
+- (x) signature help not working?
+- ( ) globals.lua for uitls:;
+- (x) highlight for @tag in gruvbox
+
+
