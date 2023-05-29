@@ -19,7 +19,7 @@
 - (_) targets
 - ( ) map telescope resume
 - ( ) telescope help_tags
-- ( ) map neorg toggle concealer
+- (x) map neorg toggle concealer
 - (x) vim.api not in completions
 - (x) signature help not working?
 - ( ) globals.lua for uitls:;
