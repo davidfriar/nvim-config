@@ -62,6 +62,8 @@ return {
       "markdown_inline",
       "query",
       "html",
+      "regex",
+      "bash",
     },
   },
   config = function(_, opts)
