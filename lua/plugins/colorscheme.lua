@@ -20,6 +20,7 @@ return {
         NoiceConfirmBorder = { fg = colors.light_blue },
         PmenuSel = { bg = colors.light_blue, fg = colors.dark },
         PmenuThumb = { bg = colors.light_blue, fg = colors.dark },
+        TitleString = { fg = colors.light_blue },
       }
       --vim.g.gruvbox_baby_telescope_theme = 1
       vim.cmd([[colorscheme gruvbox-baby]])

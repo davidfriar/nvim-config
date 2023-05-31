@@ -174,7 +174,6 @@ return {
           enable = false,
         },
         ui = {
-          title = "false",
           code_action = "",
           hover = "",
           border = "rounded",
