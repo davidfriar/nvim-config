@@ -11,7 +11,7 @@ return {
       ["<leader>ff"] = { "<cmd>Telescope find_files<CR>", "Find Files" },
       ["<leader>fr"] = { "<cmd>Telescope oldfiles<CR>", "Find Recent Files" },
       ["<leader>fg"] = { "<cmd>Telescope live_grep<CR>", "Grep" },
-      ["<leader>fb"] = { "<cmd>BrowseFiles<CR>", "File Browser" },
+      ["<leader>fb"] = { "<cmd>Telescope file_browser<CR>", "File Browser" },
 
       ["<leader>b"] = { name = "Buffer" },
       ["<leader>bb"] = { "<cmd>Telescope buffers<CR>", "Buffer List" },
@@ -84,10 +84,10 @@ return {
       ["gd"] = { "<cmd>Lspsaga peek_definition<CR>", "Go to Definition" }, -- see definition and make edits in window
       ["gi"] = { "<cmd>lua vim.lsp.buf.implementation()<CR>", "Go to Implementation" }, -- go to implementation
       ["gr"] = { "<cmd>TroubleToggle lsp_references<cr>", "Show References" },
-      ["<leader>a"] = { "<cmd>Lspsaga code_action<CR>", "Code Actions" }, -- see available code actions
+      ["<leader>a"] = { "<cmd>lua vim.lsp.buf.code_action()<CR>", "Code Actions" }, -- see available code actions
       ["<leader>r"] = { name = "Refactor" },
       ["<leader>rn"] = { "<cmd>Lspsaga rename<CR>", "Rename" }, -- smart rename
-      ["K"] = { "<cmd>Lspsaga hover_doc<CR>", "Hover" }, -- show documentation for what is under cursor
+      ["K"] = { "<cmd>lua vim.lsp.buf.hover()<CR>", "Hover" }, -- show documentation for what is under cursor
       ["<leader>o"] = { "<cmd>Lspsaga outline<CR>", "Toggle Outline" }, -- see outline on right hand side
 
       ["<leader>d"] = { name = "Diagnostics" },

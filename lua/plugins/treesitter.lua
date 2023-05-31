@@ -64,6 +64,7 @@ return {
       "html",
       "regex",
       "bash",
+      "vim",
     },
   },
   config = function(_, opts)

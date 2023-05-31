@@ -1,3 +1,4 @@
+local telescope = require("telescope")
 return {
   {
     ":CycleNumber",
@@ -12,13 +13,14 @@ return {
     end,
     description = "Cycle through styles of line numbering",
   },
-  {
-    ":BrowseFiles",
-    function()
-      local telescope = require("telescope")
-      telescope.load_extension("file_browser")
-      vim.cmd("Telescope file_browser")
-    end,
-    description = "Cycle through styles of line numbering",
-  },
+  -- {
+  --   ":BrowseFiles",
+  --   function()
+  --     print("calling browsefiles")
+  --     telescope.load_extension("file_browser")
+  --     vim.cmd("Telescope file_browser")
+  --     print("done calling browsefiles")
+  --   end,
+  --   description = "Browse Files in Telescope",
+  -- },
 }

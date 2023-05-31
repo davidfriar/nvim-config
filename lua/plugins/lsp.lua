@@ -127,7 +127,17 @@ return {
           null_ls.builtins.formatting.prettier,
           null_ls.builtins.formatting.xmlformat,
           null_ls.builtins.formatting.yamlfmt,
-          null_ls.builtins.diagnostics.eslint,
+          null_ls.builtins.diagnostics.eslint.with({
+            condition = function(utils)
+              return utils.root_has_file({
+                ".eslintrc.js",
+                ".eslintrc.cjs",
+                ".eslintrc.yaml",
+                ".eslintrc.yml",
+                ".eslintrc.json",
+              })
+            end,
+          }),
         },
       })
     end,
@@ -167,6 +177,7 @@ return {
           title = "false",
           code_action = "",
           hover = "",
+          border = "rounded",
         },
       })
     end,

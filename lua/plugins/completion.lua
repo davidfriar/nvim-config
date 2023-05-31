@@ -37,7 +37,7 @@ return {
       }),
       sources = cmp.config.sources({
         { name = "nvim_lsp" },
-        { name = "nvim_lsp_signature_help" },
+        -- { name = "nvim_lsp_signature_help" },
         { name = "neorg" },
         { name = "buffer" },
         { name = "path" },
@@ -50,8 +50,12 @@ return {
         }),
       },
       window = {
-        -- completion = cmp.config.window.bordered(),
-        documentation = cmp.config.window.bordered(),
+        completion = cmp.config.window.bordered({
+          winhighlight = "Normal:Normal,FloatBorder:FloatBorder,CursorLine:Visual,Search:None",
+        }),
+        documentation = cmp.config.window.bordered({
+          winhighlight = "Normal:Normal,FloatBorder:FloatBorder,CursorLine:Visual,Search:None",
+        }),
       },
       experimental = {
         ghost_text = {
