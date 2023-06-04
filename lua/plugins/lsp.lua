@@ -1,15 +1,3 @@
-local on_attach = function(client, bufnr)
-  local whichKey = require("which-key")
-  local lspKeys = require("core.keymaps").lsp
-  for m, ks in pairs(lspKeys) do
-    whichKey.register(ks, { mode = m, buffer = bufnr })
-  end
-  local clientKeys = require("core.keymaps")[client.name]
-  for m, ks in pairs(clientKeys) do
-    whichKey.register(ks, { mode = m, buffer = bufnr })
-  end
-end
-
 return {
   {
     "folke/neodev.nvim",
@@ -43,7 +31,7 @@ return {
       local lspconfig = require("lspconfig")
       lspconfig.lua_ls.setup({
         capabilities = capabilities,
-        on_attach = on_attach,
+        on_attach = require("core.lsp-handler").on_attach,
         settings = {
           Lua = {
             workspace = {
@@ -58,21 +46,22 @@ return {
       })
       lspconfig.html.setup({
         capabilities = capabilities,
-        on_attach = on_attach,
+        on_attach = require("core.lsp-handler").on_attach,
       })
       lspconfig.cssls.setup({
         capabilities = capabilities,
-        on_attach = on_attach,
+        on_attach = require("core.lsp-handler").on_attach,
       })
       require("typescript").setup({
         server = {
           capabilities = capabilities,
-          on_attach = on_attach,
+          on_attach = require("core.lsp-handler").on_attach,
         },
       })
       lspconfig.jsonls.setup({
         capabilities = capabilities,
-        on_attach = on_attach,
+        on_attach = require("core.lsp-handler").on_attach,
+
         settings = {
           json = {
             schemas = require("schemastore").json.schemas(),
