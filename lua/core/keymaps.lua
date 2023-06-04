@@ -12,6 +12,7 @@ return {
       ["<leader>fr"] = { "<cmd>Telescope oldfiles<CR>", "Find Recent Files" },
       ["<leader>fg"] = { "<cmd>Telescope live_grep<CR>", "Grep" },
       ["<leader>fb"] = { "<cmd>Telescope file_browser<CR>", "File Browser" },
+      ["<leader>fz"] = { "<cmd>Telescope zoxide list<CR>", "File Browser" },
 
       ["<leader>b"] = { name = "Buffer" },
       ["<leader>bb"] = { "<cmd>Telescope buffers<CR>", "Buffer List" },
@@ -84,7 +85,9 @@ return {
       ["gd"] = { "<cmd>Lspsaga peek_definition<CR>", "Go to Definition" }, -- see definition and make edits in window
       ["gi"] = { "<cmd>lua vim.lsp.buf.implementation()<CR>", "Go to Implementation" }, -- go to implementation
       ["gr"] = { "<cmd>TroubleToggle lsp_references<cr>", "Show References" },
-      ["<leader>a"] = { "<cmd>lua vim.lsp.buf.code_action()<CR>", "Code Actions" }, -- see available code actions
+      ["<leader>c"] = { name = "Code" },
+      ["<leader>ca"] = { "<cmd>lua vim.lsp.buf.code_action()<CR>", "Code Actions" }, -- see available code actions
+      ["<leader>cl"] = { vim.lsp.codelens.run, "Code Lenses" }, -- see available code actions
       ["<leader>r"] = { name = "Refactor" },
       ["<leader>rn"] = { "<cmd>Lspsaga rename<CR>", "Rename" }, -- smart rename
       ["K"] = { "<cmd>lua vim.lsp.buf.hover()<CR>", "Hover" }, -- show documentation for what is under cursor
@@ -104,6 +107,19 @@ return {
       ["<leader>rf"] = { ":TypescriptRenameFile<CR>", "Rename File" }, -- rename file and update imports
       ["<leader>ri"] = { ":TypescriptOrganizeImports<CR>", "Organise Imports" }, -- organize imports (not in youtube nvim video)
       ["<leader>ru"] = { ":TypescriptRemoveUnused<CR>", "Remove Unused variables" }, -- remove unused variables (not in youtube nvim video)
+    },
+  },
+  haskell = {
+    n = {
+      ["<leader>h"] = { name = "Haskell" },
+      ["<leader>hR"] = { [[<cmd>lua require("haskell-tools").repl.toggle()<CR>]], "Repl for Current Package" },
+      ["<leader>hr"] = {
+        [[<cmd> lua function() require("haskell-tools").repl.toggle(vim.api.nvim_buf_get_name(0)) end<CR>]],
+        "Repl for Current File",
+      },
+      ["<leader>hq"] = { [[<cmd>lua require("haskell-tools").repl.quit()<CR>]], "Quit Repl" },
+      ["<leader>hh"] = { [[<cmd>lua require("haskell-tools").hoogle.hoogle_signature()<CR>]], "Hoogle" },
+      ["<leader>he"] = { [[<cmd>lua require("haskell-tools").lsp.buf_eval_all()<CR>]], "Evaluate" },
     },
   },
 }

@@ -41,4 +41,5 @@ return {
       require("nvim-autopairs").setup({})
     end,
   },
+  { "nanotee/zoxide.vim" },
 }
