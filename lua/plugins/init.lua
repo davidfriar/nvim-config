@@ -49,4 +49,5 @@ return {
     end,
   },
   { "christoomey/vim-titlecase" },
+  { "tyru/open-browser.vim" },
 }
