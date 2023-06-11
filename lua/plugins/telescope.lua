@@ -13,7 +13,8 @@ return {
       local telescope = require("telescope")
       telescope.load_extension("fzf")
       telescope.load_extension("file_browser")
-      require("telescope").load_extension("zoxide")
+      telescope.load_extension("zoxide")
+      telescope.load_extension("neoclip")
       telescope.setup({})
     end,
   },

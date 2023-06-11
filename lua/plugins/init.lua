@@ -42,4 +42,9 @@ return {
     end,
   },
   { "nanotee/zoxide.vim" },
+  {
+    dir = "~/projects/nicerlenses/",
+    opts = {},
+  },
+  { "christoomey/vim-titlecase" },
 }

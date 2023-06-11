@@ -87,7 +87,7 @@ return {
       ["gr"] = { "<cmd>TroubleToggle lsp_references<cr>", "Show References" },
       ["<leader>c"] = { name = "Code" },
       ["<leader>ca"] = { "<cmd>lua vim.lsp.buf.code_action()<CR>", "Code Actions" }, -- see available code actions
-      ["<leader>cl"] = { vim.lsp.codelens.run, "Code Lenses" }, -- see available code actions
+      ["<leader>cl"] = { "<cmd>NicerLensesRun<CR>", "Code Lenses" }, -- see available code actions
       ["<leader>r"] = { name = "Refactor" },
       ["<leader>rn"] = { "<cmd>Lspsaga rename<CR>", "Rename" }, -- smart rename
       ["K"] = { "<cmd>lua vim.lsp.buf.hover()<CR>", "Hover" }, -- show documentation for what is under cursor

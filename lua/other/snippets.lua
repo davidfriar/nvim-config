@@ -26,6 +26,8 @@ local parse = require("luasnip.util.parser").parse_snippet
 local ms = ls.multi_snippet
 local k = require("luasnip.nodes.key_indexer").new_key
 
+vim.cmd([[au nvim_ghost_user_autocommands User dev.azure.com setfiletype markdown]])
+
 ls.add_snippets("markdown", {
   s("Feature", {
     t("#Feature: "),
@@ -42,7 +44,7 @@ ls.add_snippets("markdown", {
     i(3),
     t({
       "",
-      [[Note: Please see [Dual Running   Coexistence with DFF](/Architecture/Design-View/Dual-Running-%2D-Coexistence-with-DFF) for background and technical details.]],
+      [[Note: Please see [Multi file HTML Apps](/Architecture/Design-View/Multi%2Dfile-HTML-Apps) for background and technical details.]],
       "",
       "-----",
       "",
@@ -63,7 +65,7 @@ ls.add_snippets("markdown", {
     i(3),
     t({
       "",
-      [[Note: Please see [Dual Running   Coexistence with DFF](/Architecture/Design-View/Dual-Running-%2D-Coexistence-with-DFF) for background and technical details.]],
+      [[Note: Please see [Multi file HTML Apps](/Architecture/Design-View/Multi%2Dfile-HTML-Apps) for background and technical details.]],
       "",
       "-----",
       "",
