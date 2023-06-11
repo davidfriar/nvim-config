@@ -43,8 +43,10 @@ return {
   },
   { "nanotee/zoxide.vim" },
   {
-    dir = "~/projects/nicerlenses/",
-    opts = {},
+    "davidfriar/nvim-nicerlenses",
+    config = function()
+      require("nicerlenses").setup({})
+    end,
   },
   { "christoomey/vim-titlecase" },
 }
