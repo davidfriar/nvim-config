@@ -51,6 +51,31 @@ return {
       lspconfig.cssls.setup({
         capabilities = capabilities,
         on_attach = require("core.lsp-handler").on_attach,
+        settings = {
+          css = {
+            validate = true,
+            lint = {
+              unknownAtRules = "ignore",
+            },
+          },
+          scss = {
+            validate = true,
+            lint = {
+              unknownAtRules = "ignore",
+            },
+          },
+          less = {
+            validate = true,
+            lint = {
+              unknownAtRules = "ignore",
+            },
+          },
+        },
+      })
+      lspconfig.unocss.setup({
+        filetypes = { "css" },
+        capabilities = capabilities,
+        on_attach = require("core.lsp-handler").on_attach,
       })
       require("typescript").setup({
         server = {
@@ -116,6 +141,7 @@ return {
           null_ls.builtins.formatting.prettier,
           null_ls.builtins.formatting.xmlformat,
           null_ls.builtins.formatting.yamlfmt,
+          null_ls.builtins.formatting.fourmolu,
           null_ls.builtins.diagnostics.eslint.with({
             condition = function(utils)
               return utils.root_has_file({
@@ -140,7 +166,7 @@ return {
   {
     "williamboman/mason-lspconfig.nvim",
     opts = {
-      ensure_installed = { "tsserver", "html", "cssls", "lua_ls", "jsonls", "emmet_ls" },
+      ensure_installed = { "tsserver", "html", "cssls", "lua_ls", "jsonls", "emmet_ls", "unocss" },
     },
   },
   {
