@@ -10,6 +10,7 @@ return {
     "hrsh7th/cmp-nvim-lsp",
     "saadparwaiz1/cmp_luasnip",
     "onsails/lspkind.nvim",
+    "saecki/crates.nvim",
   },
   opts = function()
     local cmp = require("cmp")
@@ -38,6 +39,7 @@ return {
       sources = cmp.config.sources({
         { name = "nvim_lsp" },
         { name = "luasnip" },
+        { name = "crates" },
         -- { name = "nvim_lsp_signature_help" },
         { name = "neorg" },
         { name = "buffer" },
@@ -59,7 +61,7 @@ return {
       },
       experimental = {
         ghost_text = {
-          hl_group = "LspCodeLens",
+          hl_group = "Comment",
         },
       },
     }

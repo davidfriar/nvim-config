@@ -27,6 +27,9 @@ lazy.opts = {
   ui = {
     border = "rounded",
   },
+  git = {
+    url_format = "git@github.com:%s.git",
+  },
 }
 
 lazy.setup({ { import = "plugins" } })

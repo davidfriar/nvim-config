@@ -6,8 +6,10 @@ return {
       whichKey.register(ks, { mode = m, buffer = bufnr })
     end
     local clientKeys = require("core.keymaps")[client.name]
-    for m, ks in pairs(clientKeys) do
-      whichKey.register(ks, { mode = m, buffer = bufnr })
+    if clientKeys ~= nil then
+      for m, ks in pairs(clientKeys) do
+        whichKey.register(ks, { mode = m, buffer = bufnr })
+      end
     end
   end,
 }

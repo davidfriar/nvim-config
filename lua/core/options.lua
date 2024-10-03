@@ -1,4 +1,5 @@
 local options = {
+  signcolumn = "yes",
   number = true,
   shiftwidth = 2,
   tabstop = 2,
@@ -26,3 +27,5 @@ vim.opt.iskeyword:append("-")
 
 vim.g.loaded_netrw = 1
 vim.g.loaded_netrwPlugin = 1
+
+vim.g.sexp_filetypes = "clojure,scheme,lisp,timl,racket"

@@ -12,10 +12,12 @@ return {
         nvim_tree = true,
       },
       select_prompt = "Keybindings and Commands",
-      which_key = {
-        auto_register = true,
-        do_binding = false,
-      },
+      extensions = {
+        which_key = {
+          auto_register = true,
+          do_binding = false,
+        },
+      }
     })
     local keys = require("core.keymaps").global
     for m, ks in pairs(keys) do

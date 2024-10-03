@@ -1,8 +1,11 @@
 return {
   {
     "lukas-reineke/indent-blankline.nvim",
+    main = "ibl",
     opts = {
-      show_end_of_line = true,
+      indent = {
+        char = "│",
+      },
     },
   },
   { "folke/zen-mode.nvim" },
@@ -10,6 +13,8 @@ return {
     "numToStr/Comment.nvim",
     config = function()
       require("Comment").setup()
+      local ft = require("Comment.ft")
+      ft.set("openscad", { "//%s", "/*%s*/" })
     end,
   },
   {
@@ -49,5 +54,12 @@ return {
     end,
   },
   { "christoomey/vim-titlecase" },
+  {
+    "johmsalas/text-case.nvim",
+    config = function()
+      require("textcase").setup({})
+    end,
+  },
   { "tyru/open-browser.vim" },
+  { "iamcco/markdown-preview.nvim" },
 }

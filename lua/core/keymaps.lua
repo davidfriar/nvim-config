@@ -88,6 +88,7 @@ return {
       ["<leader>c"] = { name = "Code" },
       ["<leader>ca"] = { "<cmd>lua vim.lsp.buf.code_action()<CR>", "Code Actions" }, -- see available code actions
       ["<leader>cl"] = { "<cmd>NicerLensesRun<CR>", "Code Lenses" }, -- see available code actions
+      ["<leader>cr"] = { "<cmd>lua require('rainbow-delimiters').toggle(0)<CR>", "Rainbow delimiters" },
       ["<leader>r"] = { name = "Refactor" },
       ["<leader>rn"] = { "<cmd>Lspsaga rename<CR>", "Rename" }, -- smart rename
       ["K"] = { "<cmd>lua vim.lsp.buf.hover()<CR>", "Hover" }, -- show documentation for what is under cursor
@@ -120,6 +121,35 @@ return {
       ["<leader>hq"] = { [[<cmd>lua require("haskell-tools").repl.quit()<CR>]], "Quit Repl" },
       ["<leader>hh"] = { [[<cmd>lua require("haskell-tools").hoogle.hoogle_signature()<CR>]], "Hoogle" },
       ["<leader>he"] = { [[<cmd>lua require("haskell-tools").lsp.buf_eval_all()<CR>]], "Evaluate" },
+    },
+  },
+  crates = {
+    n = {
+      ["<leader>c"] = { name = "Crates" },
+      ["<leader>ct"] = { [[<cmd>lua require("crates").toggle()<CR>]], "Toggle crates" },
+      ["<leader>cr"] = { [[<cmd>lua require("crates").reload()<CR>]], "Reload crates" },
+
+      ["<leader>cv"] = { [[<cmd>lua require("crates").show_versions_popup()<CR>]], "Versions" },
+      ["<leader>cf"] = { [[<cmd>lua require("crates").show_features_popup()<CR>]], "Features" },
+      ["<leader>cd"] = { [[<cmd>lua require("crates").show_dependencies_popup()<CR>]], "Dependencies" },
+
+      ["<leader>cu"] = { [[<cmd>lua require("crates").update_crate()<CR>]], "Update crate" },
+      ["<leader>ca"] = { [[<cmd>lua require("crates").update_all_crates()<CR>]], "Update all crates" },
+      ["<leader>cU"] = { [[<cmd>lua require("crates").upgrade_crate()<CR>]], "Upgrade crate" },
+      ["<leader>cA"] = { [[<cmd>lua require("crates").upgrade_all_crates()<CR>]], "Upgrade all crates" },
+
+      ["<leader>ce"] = { [[<cmd>lua require("crates").expand_plain_crate_to_inline_table()<CR>]], "Expand crate" },
+      ["<leader>cE"] = { [[<cmd>lua require("crates").extract_crate_into_table()<CR>]], "Extract crate" },
+
+      ["<leader>cH"] = { [[<cmd>lua require("crates").open_homepage()<CR>]], "Open home page" },
+      ["<leader>cR"] = { [[<cmd>lua require("crates").open_repository()<CR>]], "Open repository" },
+      ["<leader>cD"] = { [[<cmd>lua require("crates").open_documentation()<CR>]], "Open documentation" },
+      ["<leader>cC"] = { [[<cmd>lua require("crates").open_crates_io()<CR>]], "Open crates.io" },
+    },
+    v = {
+      ["<leader>c"] = { name = "Crates" },
+      ["<leader>cu"] = { [[<cmd>lua require("crates").update_crates()<CR>]], "Update crates" },
+      ["<leader>cU"] = { [[<cmd>lua require("crates").upgrade_crates()<CR>]], "Upgrade crates" },
     },
   },
 }

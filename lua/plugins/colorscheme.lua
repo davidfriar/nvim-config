@@ -21,6 +21,14 @@ return {
         PmenuSel = { bg = colors.light_blue, fg = colors.dark },
         PmenuThumb = { bg = colors.light_blue, fg = colors.dark },
         TitleString = { fg = colors.light_blue },
+        NonText = { fg = colors.medium_gray },
+        RainbowDelimiterRed = { fg = colors.red },
+        RainbowDelimiterYellow = { fg = colors.soft_yellow },
+        RainbowDelimiterBlue = { fg = colors.light_blue },
+        RainbowDelimiterOrange = { fg = colors.orange },
+        RainbowDelimiterGreen = { fg = colors.soft_green },
+        RainbowDelimiterViolet = { fg = colors.pink },
+        RainbowDelimiterCyan = { fg = colors.blue_gray },
       }
       --vim.g.gruvbox_baby_telescope_theme = 1
       vim.cmd([[colorscheme gruvbox-baby]])

@@ -48,6 +48,10 @@ return {
         capabilities = capabilities,
         on_attach = require("core.lsp-handler").on_attach,
       })
+      lspconfig.volar.setup({
+        capabilities = capabilities,
+        on_attach = require("core.lsp-handler").on_attach,
+      })
       lspconfig.cssls.setup({
         capabilities = capabilities,
         on_attach = require("core.lsp-handler").on_attach,
@@ -74,6 +78,14 @@ return {
       })
       lspconfig.unocss.setup({
         filetypes = { "css" },
+        capabilities = capabilities,
+        on_attach = require("core.lsp-handler").on_attach,
+      })
+      lspconfig.clojure_lsp.setup({
+        capabilities = capabilities,
+        on_attach = require("core.lsp-handler").on_attach,
+      })
+      lspconfig.racket_langserver.setup({
         capabilities = capabilities,
         on_attach = require("core.lsp-handler").on_attach,
       })
@@ -121,6 +133,17 @@ return {
           },
         }),
       })
+
+      lspconfig.openscad_lsp.setup({
+        capabilities = capabilities,
+        on_attach = require("core.lsp-handler").on_attach,
+      })
+
+      -- lspconfig.rust_analyzer.setup({
+      --   capabilities = capabilities,
+      --   on_attach = require("core.lsp-handler").on_attach,
+      -- })
+
       local null_ls = require("null-ls")
       local augroup = vim.api.nvim_create_augroup("LspFormatting", {})
       null_ls.setup({
@@ -142,6 +165,11 @@ return {
           null_ls.builtins.formatting.xmlformat,
           null_ls.builtins.formatting.yamlfmt,
           null_ls.builtins.formatting.fourmolu,
+          null_ls.builtins.formatting.cljstyle,
+          null_ls.builtins.formatting.raco_fmt,
+          null_ls.builtins.formatting.clang_format.with({
+            filetypes = { "c", "cpp", "cs", "java", "cuda", "proto", "openscad", "clojure" },
+          }),
           null_ls.builtins.diagnostics.eslint.with({
             condition = function(utils)
               return utils.root_has_file({
@@ -167,6 +195,9 @@ return {
     "williamboman/mason-lspconfig.nvim",
     opts = {
       ensure_installed = { "tsserver", "html", "cssls", "lua_ls", "jsonls", "emmet_ls", "unocss" },
+      handlers = {
+        jdtls = function() end,
+      },
     },
   },
   {
@@ -179,7 +210,9 @@ return {
         scroll_preview = { scroll_down = "<C-j>", scroll_up = "<C-k>" },
         -- use enter to open file with definition preview
         definition = {
-          edit = "<CR>",
+          keys = {
+            edit = "<CR>",
+          },
         },
         lightbulb = {
           enable = true,
@@ -207,5 +240,9 @@ return {
     config = function()
       require("trouble").setup({})
     end,
+  },
+  {
+    "cseickel/diagnostic-window.nvim",
+    dependencies = "MunifTanjim/nui.nvim",
   },
 }
