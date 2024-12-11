@@ -89,11 +89,9 @@ return {
         capabilities = capabilities,
         on_attach = require("core.lsp-handler").on_attach,
       })
-      require("typescript").setup({
-        server = {
-          capabilities = capabilities,
-          on_attach = require("core.lsp-handler").on_attach,
-        },
+      lspconfig.ts_ls.setup({
+        capabilities = capabilities,
+        on_attach = require("core.lsp-handler").on_attach,
       })
       lspconfig.jsonls.setup({
         capabilities = capabilities,
@@ -139,6 +137,11 @@ return {
         on_attach = require("core.lsp-handler").on_attach,
       })
 
+      require("lspconfig").tsp_server.setup({
+        capabilities = capabilities,
+        on_attach = require("core.lsp-handler").on_attach,
+      })
+
       -- lspconfig.rust_analyzer.setup({
       --   capabilities = capabilities,
       --   on_attach = require("core.lsp-handler").on_attach,
@@ -168,7 +171,7 @@ return {
           null_ls.builtins.formatting.cljstyle,
           null_ls.builtins.formatting.raco_fmt,
           null_ls.builtins.formatting.clang_format.with({
-            filetypes = { "c", "cpp", "cs", "java", "cuda", "proto", "openscad", "clojure" },
+            filetypes = { "c", "cpp", "cs", "java", "cuda", "proto", "openscad", "clojure", "typespec" },
           }),
           null_ls.builtins.diagnostics.eslint.with({
             condition = function(utils)
@@ -194,7 +197,7 @@ return {
   {
     "williamboman/mason-lspconfig.nvim",
     opts = {
-      ensure_installed = { "tsserver", "html", "cssls", "lua_ls", "jsonls", "emmet_ls", "unocss" },
+      ensure_installed = { "ts_ls", "html", "cssls", "lua_ls", "jsonls", "emmet_ls", "unocss" },
       handlers = {
         jdtls = function() end,
       },
@@ -244,5 +247,11 @@ return {
   {
     "cseickel/diagnostic-window.nvim",
     dependencies = "MunifTanjim/nui.nvim",
+  },
+  {
+    "dmmulroy/ts-error-translator.nvim",
+    config = function()
+      require("ts-error-translator").setup()
+    end,
   },
 }

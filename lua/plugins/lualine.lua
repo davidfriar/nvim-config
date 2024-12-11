@@ -6,6 +6,8 @@ return {
     vim.opt.showmode = false
   end,
   config = function()
+    local lazy_status = require("lazy.status")
+    local color = require("gruvbox-baby.colors").config()
     require("lualine").setup({
       -- See :help lualine.txt
       options = {
@@ -21,7 +23,14 @@ return {
         lualine_c = {
           { "filename", path = 1 },
         },
-        lualine_x = { "filetype" },
+        lualine_x = {
+          {
+            lazy_status.updates,
+            cond = lazy_status.has_updates,
+            color = { fg = color.orange },
+          },
+          { "filetype" },
+        },
         lualine_y = { "fileformat", "encoding" },
         lualine_z = { "progress", "location" },
       },
