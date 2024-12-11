@@ -8,20 +8,16 @@ return {
   config = function()
     require("legendary").setup({
       commands = require("core.commands"),
-      extensions = {
-        nvim_tree = true,
-      },
       select_prompt = "Keybindings and Commands",
       extensions = {
         which_key = {
           auto_register = true,
           do_binding = false,
         },
-      }
+        nvim_tree = true,
+      },
     })
     local keys = require("core.keymaps").global
-    for m, ks in pairs(keys) do
-      require("which-key").register(ks, { mode = m })
-    end
+    require("which-key").add(keys)
   end,
 }

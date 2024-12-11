@@ -1,15 +1,11 @@
 return {
   on_attach = function(client, bufnr)
     local whichKey = require("which-key")
-    local lspKeys = require("core.keymaps").lsp
-    for m, ks in pairs(lspKeys) do
-      whichKey.register(ks, { mode = m, buffer = bufnr })
-    end
-    local clientKeys = require("core.keymaps")[client.name]
+    local keymaps = require("core.keymaps")
+    whichKey.add(keymaps.lsp)
+    local clientKeys = keymaps[client.name]
     if clientKeys ~= nil then
-      for m, ks in pairs(clientKeys) do
-        whichKey.register(ks, { mode = m, buffer = bufnr })
-      end
+      whichKey.add(clientKeys)
     end
   end,
 }

@@ -29,6 +29,7 @@ return {
         RainbowDelimiterGreen = { fg = colors.soft_green },
         RainbowDelimiterViolet = { fg = colors.pink },
         RainbowDelimiterCyan = { fg = colors.blue_gray },
+        LeapLabelPrimary = { bg = colors.orange, fg = colors.dark },
       }
       --vim.g.gruvbox_baby_telescope_theme = 1
       vim.cmd([[colorscheme gruvbox-baby]])

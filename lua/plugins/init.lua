@@ -62,4 +62,26 @@ return {
   },
   { "tyru/open-browser.vim" },
   { "iamcco/markdown-preview.nvim" },
+  {
+    "gbprod/substitute.nvim",
+    dependencies = "ggandor/leap.nvim",
+    config = function()
+      require("substitute").setup({})
+      -- vim.keymap.set("n", "s", require("substitute").operator, { noremap = true })
+      -- vim.keymap.set("n", "ss", require("substitute").line, { noremap = true })
+      -- vim.keymap.set("n", "S", require("substitute").eol, { noremap = true })
+      -- vim.keymap.set("x", "s", require("substitute").visual, { noremap = true })
+    end,
+  },
+  {
+    "echasnovski/mini.ai",
+    version = false,
+    config = function()
+      require("mini.ai").setup({
+        custom_textobjects = {
+          f = false, -- disable because the one from treestiiter-textobjects works better
+        },
+      })
+    end,
+  },
 }
